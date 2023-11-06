@@ -1,0 +1,4 @@
+.idea/
+myprojectenv/
+__pycache__/
+test.py
