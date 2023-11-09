@@ -17,6 +17,12 @@ class ExecutiveAdmin(admin.ModelAdmin):
     fields = ['full_name', 'IIN', 'job_title', 'phone', 'email', 'fin_organization']
 
 
+class WorkPeriodAdmin(admin.ModelAdmin):
+    list_display = ['id', 'start_date', 'end_date', 'executive']
+    fields = ['start_date', 'end_date', 'executive']
+
+
 admin.site.register(FinancialOrganization, FinancialOrganizationAdmin)
 admin.site.register(Executive, ExecutiveAdmin)
+admin.site.register(WorkPeriod, WorkPeriodAdmin)
 
