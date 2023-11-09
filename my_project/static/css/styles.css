@@ -1,0 +1,16 @@
+.btn-shadow {
+    -webkit-box-shadow: 2px 2px 38px 7px rgba(34, 60, 80, 0.18);
+    -moz-box-shadow: 2px 2px 38px 7px rgba(34, 60, 80, 0.18);
+    box-shadow: 2px 2px 38px 7px rgba(34, 60, 80, 0.18);
+}
+
+
+
+.list_margins_2 {
+    margin-top: 130px;
+    margin-left: 34%;
+}
+
+body {
+    font-size: 80%;
+}

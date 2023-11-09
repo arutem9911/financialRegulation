@@ -1,0 +1,29 @@
+{% extends 'base.html'  %}
+{% load static %}
+{% block title %}
+Financial Organization
+{% endblock %}
+
+{% block content %}
+<ol class="list-group list-group-numbered">
+    {% for finOrg in finOrgs %}
+    <li class="list-group-item btn-shadow d-flex justify-content-between align-items-start">
+        <a class="btn" href="{% url 'detail-fin-org' id=finOrg.id %}">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">
+                    {{finOrg.name}}
+                </div>
+            </div>
+        </a>
+    </li>
+    {% endfor %}
+</ol>
+
+
+
+
+
+
+
+{% endblock %}
+

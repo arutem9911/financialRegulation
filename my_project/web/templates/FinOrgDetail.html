@@ -1,0 +1,163 @@
+{% extends 'base.html'  %}
+{% load static %}
+{% block title %}
+Financial Organization
+{% endblock %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header" style="font-size: 26px;">
+        {{FinOrg.name}}
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+
+
+
+
+
+            <div class="row m-2" style="font-size: 18px;">
+                <div class="col-md-4">
+                    <p><b>БИН:</b></p>
+                </div>
+                <div class="col-md-8">
+                    {{FinOrg.BIN}}
+                </div>
+            </div>
+            <div class="row m-2" style="font-size: 18px;">
+                <div class="col-md-4">
+                    <p><b>Адрес (город, улица, дом, квартира):</b></p>
+                </div>
+                <div class="col-md-8">
+                    {{FinOrg.address}}
+                </div>
+            </div>
+            <div class="row m-2" style="font-size: 18px;">
+                <div class="col-md-4">
+                    <p><b>Телефон:</b></p>
+                </div>
+                <div class="col-md-8">
+                    {{FinOrg.phone}}
+                </div>
+            </div>
+            <div class="row m-2" style="font-size: 18px;">
+                <div class="col-md-4">
+                    <p><b>Факс:</b></p>
+                </div>
+                <div class="col-md-8">
+                    {{FinOrg.fax}}
+                </div>
+            </div>
+            <div class="row m-2" style="font-size: 18px;">
+                <div class="col-md-4">
+                    <p><b>E-mail:</b></p>
+                </div>
+                <div class="col-md-8">
+                    {{FinOrg.email}}
+                </div>
+            </div>
+            <div class="row m-2" style="font-size: 18px;">
+                <div class="col-md-4">
+                    <p><b>Web-сайт:</b></p>
+                </div>
+                <div class="col-md-8">
+                    {{FinOrg.web_site}}
+                </div>
+            </div>
+
+    <!--      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>-->
+        </blockquote>
+    </div>
+    <div class="card" style="font-size: 18px;">
+        <a href="#managersList" id="managersListBtn" class="btn" role="button">
+            <div class="card-header">
+                Руководящие лица
+            </div>
+        </a>
+
+        <ul class="list-group list-group-flush" style="display: none;" id="noneOrBlock">
+            <li class="list-group-item">
+                <div class="row m-2" style="font-size: 18px;">
+                    <div class="col-md-4">
+                        <p><b>Председатель Совета директоров:</b></p>
+                    </div>
+                    <div class="col-md-8">
+                        {% for manager in managers %}
+                            {% if manager.job_title == "Председатель Совета директоров" %}
+                                {{ manager.full_name }};
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row m-2" style="font-size: 18px;">
+                    <div class="col-md-4">
+                        <p><b>Председатель Правления:</b></p>
+                    </div>
+                    <div class="col-md-8">
+                        {% for manager in managers %}
+                            {% if manager.job_title == "Председатель Правления" %}
+                                {{ manager.full_name }};
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row m-2" style="font-size: 18px;">
+                    <div class="col-md-4">
+                        <p><b>Совет директоров:</b></p>
+                    </div>
+                    <div class="col-md-8">
+                        {% for manager in managers %}
+                            {% if manager.job_title == "Совет директоров" %}
+                                {{ manager.full_name }};
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row m-2" style="font-size: 18px;">
+                    <div class="col-md-4">
+                        <p><b>Члены Правления:</b></p>
+                    </div>
+                    <div class="col-md-8">
+                        {% for manager in managers %}
+                            {% if manager.job_title == "Члены Правления" %}
+                                {{ manager.full_name }};
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="row m-2" style="font-size: 18px;">
+                    <div class="col-md-4">
+                        <p><b>Главный бухгалтер:</b></p>
+                    </div>
+                    <div class="col-md-8">
+                        {% for manager in managers %}
+                            {% if manager.job_title == "Главный бухгалтер" %}
+                                {{ manager.full_name }};
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--{% for manager in managers %}-->
+<!--{{manager.full_name}}-->
+<!--{% endfor %}-->
+
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/managersList.js' %}"></script>
+{% endblock %}
