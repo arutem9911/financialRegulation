@@ -3,7 +3,7 @@ from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView, ListView
 from django import shortcuts
 # from web.forms import VacancyForm, SummaryForm, SearchForm, ResponseForm
-from web.models import FinancialOrganization, Manager
+from web.models import FinancialOrganization, Executive
 from urllib.parse import urlencode
 from django.db.models import Q
 
@@ -21,9 +21,9 @@ class FinOrgDetail(DetailView):
     pk_url_kwarg = 'id'
 
     def get_context_data(self, **kwargs):
-        fn_org_managers = self.object.managers.all()
+        fin_org_managers = self.object.executives.all()
         managers = []
-        for item_manager in fn_org_managers:
+        for item_manager in fin_org_managers:
             managers.append(item_manager)
         return super().get_context_data(
             managers=managers,

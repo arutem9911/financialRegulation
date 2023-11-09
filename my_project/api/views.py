@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.viewsets import ModelViewSet
-from web.models import FinancialOrganization, Manager
-from api.serializes import FinOrgSerializer, ManagerSerializer
+from web.models import FinancialOrganization, Executive
+from api.serializes import FinOrgSerializer, ExecutiveSerializer
 from django.contrib.auth import get_user_model
 
 
@@ -14,8 +14,8 @@ class FinOrgViewSet(ModelViewSet):
     lookup_url_kwarg = 'id'
 
 
-class ManagerViewSet(ModelViewSet):
-    queryset = Manager.objects.all()
-    serializer_class = ManagerSerializer
+class ExecutiveViewSet(ModelViewSet):
+    queryset = Executive.objects.all()
+    serializer_class = ExecutiveSerializer
     lookup_field = 'id'
     lookup_url_kwarg = 'id'

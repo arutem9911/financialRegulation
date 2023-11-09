@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Manager(models.Model):
+class Executive(models.Model):
     JOBTITLE = [
         ("Председатель Совета директоров", "Председатель Совета директоров"),
         ("Председатель Правления", "Председатель Правления"),
@@ -48,14 +48,14 @@ class Manager(models.Model):
     fin_organization = models.ForeignKey(
         'web.FinancialOrganization',
         on_delete=models.CASCADE,
-        related_name='managers',
+        related_name='executives',
         verbose_name='fin organization',
         default=1
     )
 
     class Meta:
-        verbose_name = 'manager'
-        verbose_name_plural = 'managers'
+        verbose_name = 'executive'
+        verbose_name_plural = 'executives'
 
     def __str__(self):
         return f'{self.full_name}'

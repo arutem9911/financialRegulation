@@ -1,5 +1,5 @@
 from web.models.FinancialOrganization import FinancialOrganization
-from web.models.manager import Manager
+from web.models.executive import Executive
 
 
 

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from web.models import FinancialOrganization, Manager
+from web.models import FinancialOrganization, Executive
 
 
 class FinOrgSerializer(serializers.ModelSerializer):
@@ -9,9 +9,9 @@ class FinOrgSerializer(serializers.ModelSerializer):
         read_only = ['id']
 
 
-class ManagerSerializer(serializers.ModelSerializer):
+class ExecutiveSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Manager
+        model = Executive
         fields = ['id', 'full_name', 'IIN', 'job_title', 'phone', 'email', 'fin_organization']
         read_only_fields = ['id']
 

@@ -10,7 +10,7 @@ class FinancialOrganizationAdmin(admin.ModelAdmin):
     fields = ['name', 'BIN', 'address', 'phone', 'fax', 'email', 'web_site']
 
 
-class ManagerAdmin(admin.ModelAdmin):
+class ExecutiveAdmin(admin.ModelAdmin):
     list_display = ['id', 'full_name', 'IIN', 'job_title', 'phone', 'email', 'fin_organization']
     list_filter = ['full_name', 'job_title', 'fin_organization']
     search_fields = ['full_name', 'IIN', 'job_title', 'fin_organization']
@@ -18,5 +18,5 @@ class ManagerAdmin(admin.ModelAdmin):
 
 
 admin.site.register(FinancialOrganization, FinancialOrganizationAdmin)
-admin.site.register(Manager, ManagerAdmin)
+admin.site.register(Executive, ExecutiveAdmin)
 
