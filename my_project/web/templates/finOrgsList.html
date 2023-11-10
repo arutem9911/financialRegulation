@@ -7,7 +7,7 @@ Financial Organization
 {% block content %}
 <ol class="list-group list-group-numbered">
     {% for finOrg in finOrgs %}
-    <li class="list-group-item btn-shadow d-flex justify-content-between align-items-start">
+    <li class="list-group-item btn-shadow d-flex justify-content-between align-items-start m-2">
         <a class="btn" href="{% url 'detail-fin-org' id=finOrg.id %}">
             <div class="ms-2 me-auto">
                 <div class="fw-bold">
